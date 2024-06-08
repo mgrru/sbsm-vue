@@ -36,7 +36,11 @@
           alert('用户不存在或密码不正确!')
         } else {
           alert('登录成功！')
-          axios.defaults.headers.common[ 'Authorization' ] = res.data
+          localStorage.setItem('token', res.data)
+          const token = localStorage.getItem('token')
+          if (token) {
+            axios.defaults.headers.common[ 'Authorization' ] = token
+          }
         }
       })
   }
