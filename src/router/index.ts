@@ -9,6 +9,7 @@ import LoginView from '@/components/master/login.vue'
 import HelloView from '@/components/master/hello.vue'
 import Recharge from '@/components/master/recharge.vue'
 import Register from '@/components/master/register.vue'
+import MasterProfile from '@/components/master/master-profile.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,16 @@ const router = createRouter({
           path: '/recharge',
           component: Recharge
         },
+      ]
+    },
+    {
+      path: '/master',
+      component: HomeView,
+      children: [
+        {
+          path: '/master/profile',
+          component: MasterProfile
+        }
       ]
     },
     {

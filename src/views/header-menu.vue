@@ -6,6 +6,12 @@
         <img style="width: 50px" src="/LogosMorpheusIcon.svg" alt="My logo" />
       </el-icon>
     </el-menu-item>
+    <el-menu-item index="5" route="/master/profile" v-show="isLogin">
+      <el-icon>
+        <Avatar />
+      </el-icon>
+      御主资料
+    </el-menu-item>
     <div class="flex-grow" />
     <el-menu-item index="1" route="/login">
       <el-icon>
@@ -19,7 +25,7 @@
       </el-icon>
       注册
     </el-menu-item>
-    <el-menu-item index="3" route="/recharge">
+    <el-menu-item index="3" route="/recharge" v-show="isLogin">
       <el-icon>
         <CreditCard />
       </el-icon>
@@ -40,6 +46,15 @@
   const activeIndex = ref('1')
   const handleSelect = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
+  }
+
+
+  const isLogin = ref(false)
+  const token = localStorage.getItem('token')
+  if (token) {
+    isLogin.value = true
+  } else {
+    isLogin.value = false
   }
 </script>
 
