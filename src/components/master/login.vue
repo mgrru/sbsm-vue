@@ -15,13 +15,13 @@
   import axios from 'axios'
   import { reactive } from 'vue'
 
-  interface data {
-    id: Number
-    password: String
+  interface formDataType {
+    id: number | null
+    password: string
   }
 
-  const formData = reactive({
-    id: '',
+  const formData: formDataType = reactive({
+    id: null,
     password: ''
   })
 
@@ -41,12 +41,13 @@
           if (token) {
             axios.defaults.headers.common[ 'Authorization' ] = token
           }
+          window.location.reload()
         }
       })
   }
 
   const reset = () => {
-    formData.id = ''
+    formData.id = null
     formData.password = ''
   }
 </script>
