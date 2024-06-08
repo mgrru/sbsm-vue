@@ -3,7 +3,7 @@
     @select="handleSelect">
     <el-menu-item index="0" style="width: 200px" route="/about" disabled class="custom-disabled">
       <el-icon>
-        <img style="width: 50px" src="/LogosMorpheusIcon.svg" alt="My logo" />
+        <img style="width: 50px" src="/LogosMorpheusIcon.svg" alt="MYLOGO" />
       </el-icon>
     </el-menu-item>
     <el-menu-item index="5" route="/master/profile" v-show="isLogin">
@@ -11,6 +11,24 @@
         <Avatar />
       </el-icon>
       御主资料
+    </el-menu-item>
+    <el-menu-item index="6" route="/master/servants" v-show="isLogin">
+      <el-icon>
+        <img style="width: 20px" src="/GameIconsCaravel.svg" alt="灵基一览" />
+      </el-icon>
+      灵基一览
+    </el-menu-item>
+    <el-menu-item index="7" route="/master/summoning" v-show="isLogin">
+      <el-icon>
+        <img style="width: 20px" src="/GameIconsDoubleRingedOrb.svg" alt="灵基召唤" />
+      </el-icon>
+      灵基召唤
+    </el-menu-item>
+    <el-menu-item index="8" route="/master/shop" v-show="isLogin">
+      <el-icon>
+        <img style="width: 20px" src="/GameIconsDiceFire.svg" alt="商店" />
+      </el-icon>
+      商店
     </el-menu-item>
     <div class="flex-grow" />
     <el-menu-item index="1" route="/login">
@@ -29,7 +47,7 @@
       <el-icon>
         <CreditCard />
       </el-icon>
-      充值
+      购买圣晶石
     </el-menu-item>
     <el-menu-item index="4" route="/about">
       <el-icon>
@@ -49,6 +67,7 @@
   }
 
 
+  // 控制登录后查看对应组件
   const isLogin = ref(false)
   const isShow = () => {
     const token = localStorage.getItem('token')
