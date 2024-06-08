@@ -41,7 +41,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref } from 'vue'
+  import { onMounted, ref } from 'vue'
 
   const activeIndex = ref('1')
   const handleSelect = (key: string, keyPath: string[]) => {
@@ -50,12 +50,19 @@
 
 
   const isLogin = ref(false)
-  const token = localStorage.getItem('token')
-  if (token) {
-    isLogin.value = true
-  } else {
-    isLogin.value = false
+  const isShow = () => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      isLogin.value = true
+    } else {
+      isLogin.value = false
+    }
   }
+
+
+  onMounted(() => {
+    isShow()
+  })
 </script>
 
 <style>
