@@ -5,9 +5,10 @@ import LogView from '@/components/log/log.vue'
 import AddView from '@/components/user/add.vue'
 import SelectView from '@/components/user/select.vue'
 import UpdateView from '@/components/user/update.vue'
-import LoginView from '@/components/master/login-view.vue'
-import HelloView from '@/components/master/user-hello.vue'
-import registerView from '@/components/master/register-view.vue'
+import LoginView from '@/components/master/login.vue'
+import HelloView from '@/components/master/hello.vue'
+import Recharge from '@/components/master/recharge.vue'
+import Register from '@/components/master/register.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,7 +28,11 @@ const router = createRouter({
         },
         {
           path: '/register',
-          component: registerView
+          component: Register
+        },
+        {
+          path: '/recharge',
+          component: Recharge
         },
       ]
     },
