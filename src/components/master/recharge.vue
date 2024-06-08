@@ -35,6 +35,7 @@
 </template>
 
 <script setup lang="ts">
+  import router from '@/router'
   import axios from 'axios'
   import { ref } from 'vue'
 
@@ -46,7 +47,17 @@
         rmb: rmb.value
       })
       .then(function (res) {
-        alert(res.data)
+        if (res.data == "登录验证失败,请重新登录!") {
+          localStorage.removeItem('token')
+          router.push('/login')
+          window.location.reload()
+          alert(res.data)
+        }
+        return res
+      })
+      .then(function (res) {
+        if (res.data != "登录验证失败,请重新登录!")
+          alert(res.data)
       })
   }
 </script>
