@@ -2,27 +2,27 @@
   <div style="max-width: 400px" class="rechargeview">
     <div>
       <el-radio-group v-model="rmb">
-        <div>
+        <div class="radio-tag-pair">
           <el-radio value="6" size="large" border>&nbsp;&nbsp;6元&nbsp;&nbsp;</el-radio>
           <el-tag size="large" type="primary">&nbsp;&nbsp;1颗圣晶石&nbsp;&nbsp;</el-tag>
         </div>
-        <div>
+        <div class="radio-tag-pair">
           <el-radio value="25" size="large" border>&nbsp;25元&nbsp;</el-radio>
           <el-tag size="large" type="success">&nbsp;&nbsp;5颗圣晶石&nbsp;&nbsp;</el-tag>
         </div>
-        <div>
+        <div class="radio-tag-pair">
           <el-radio value="78" size="large" border>&nbsp;78元&nbsp;</el-radio>
           <el-tag size="large" type="info">&nbsp;18颗圣晶石&nbsp;</el-tag>
         </div>
-        <div>
+        <div class="radio-tag-pair">
           <el-radio value="158" size="large" border>158元</el-radio>
           <el-tag size="large" type="warning">&nbsp;41颗圣晶石&nbsp;</el-tag>
         </div>
-        <div>
+        <div class="radio-tag-pair">
           <el-radio value="258" size="large" border>258元</el-radio>
           <el-tag size="large" type="danger">&nbsp;99颗圣晶石&nbsp;</el-tag>
         </div>
-        <div>
+        <div class="radio-tag-pair">
           <el-radio value="518" size="large" border>518元</el-radio>
           <el-tag size="large" type="primary">221颗圣晶石</el-tag>
         </div>
@@ -52,14 +52,6 @@
 </script>
 
 <style scoped>
-  .el-alert {
-    margin: 20px 0 0;
-  }
-
-  .el-alert:first-child {
-    margin: 0;
-  }
-
   .el-radio-group {
     flex-direction: column;
   }
@@ -68,5 +60,18 @@
     margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .radio-tag-pair {
+    display: flex;
+    align-items: center;
+    /* 垂直居中对齐 */
+    margin-bottom: 10px;
+    /* 每对之间的间距 */
+  }
+
+  .radio-tag-pair .el-radio {
+    margin-right: 10px;
+    /* 单选按钮和标签之间的间距 */
   }
 </style>
