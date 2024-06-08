@@ -10,6 +10,7 @@ import HelloView from '@/components/master/hello.vue'
 import Recharge from '@/components/master/recharge.vue'
 import Register from '@/components/master/register.vue'
 import MasterProfile from '@/components/master/master-profile.vue'
+import Servants from '@/components/master/servants.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,7 +45,11 @@ const router = createRouter({
         {
           path: '/master/profile',
           component: MasterProfile
-        }
+        },
+        {
+          path: '/master/servants',
+          component: Servants
+        },
       ]
     },
     {
