@@ -59,6 +59,12 @@
         if (res.data != "登录验证失败,请重新登录!")
           alert(res.data)
       })
+      .catch((err) => {
+        localStorage.removeItem('token')
+        router.push('/login')
+        window.location.reload()
+        alert("发生未知错误!请重新登录!")
+      })
   }
 </script>
 

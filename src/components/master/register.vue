@@ -12,6 +12,7 @@
 </template>
 
 <script setup lang="ts">
+  import router from '@/router'
   import axios from 'axios'
   import { reactive } from 'vue'
 
@@ -28,6 +29,12 @@
       })
       .then(function (res) {
         alert(res.data)
+      })
+      .catch((err) => {
+        localStorage.removeItem('token')
+        router.push('/login')
+        window.location.reload()
+        alert("发生未知错误!请重新登录!")
       })
   }
 

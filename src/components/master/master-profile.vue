@@ -75,6 +75,12 @@
           alert(res.data)
         }
       })
+      .catch((err) => {
+        localStorage.removeItem('token')
+        router.push('/login')
+        window.location.reload()
+        alert("发生未知错误!请重新登录!")
+      })
 
   }
 
@@ -97,8 +103,11 @@
         Object.assign(formData, oData)
         console.log(oData)
       })
-      .catch(function (err) {
-        console.log(err)
+      .catch((err) => {
+        localStorage.removeItem('token')
+        router.push('/login')
+        window.location.reload()
+        alert("发生未知错误!请重新登录!")
       })
   }
 
