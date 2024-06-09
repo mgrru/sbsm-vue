@@ -14,13 +14,13 @@
     </el-menu-item>
     <el-menu-item index="6" route="/master/servants" v-show="isLogin">
       <el-icon>
-        <img style="width: 20px" src="/GameIconsCaravel.svg" alt="灵基一览" />
+        <img style="width: 20px" src="/GameIconsDoubleRingedOrb.svg" alt="灵基一览" />
       </el-icon>
       灵基一览
     </el-menu-item>
     <el-menu-item index="7" route="/master/summoning" v-show="isLogin">
       <el-icon>
-        <img style="width: 20px" src="/GameIconsDoubleRingedOrb.svg" alt="灵基召唤" />
+        <img style="width: 20px" src="/GameIconsCaravel.svg" alt="灵基召唤" />
       </el-icon>
       灵基召唤
     </el-menu-item>
