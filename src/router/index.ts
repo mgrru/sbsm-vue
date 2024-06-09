@@ -11,6 +11,8 @@ import Recharge from '@/components/master/recharge.vue'
 import Register from '@/components/master/register.vue'
 import MasterProfile from '@/components/master/master-profile.vue'
 import Servants from '@/components/master/servants.vue'
+import Shop from '@/components/master/shop.vue'
+import ServantSell from '@/components/master/servant-sell.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -49,6 +51,18 @@ const router = createRouter({
         {
           path: '/master/servants',
           component: Servants
+        },
+        {
+          path: '/master/shop',
+          component: Shop
+        },
+        {
+          path: '/master/sell',
+          component: ServantSell
+        },
+        {
+          path: '/master/recharge',
+          component: Recharge
         },
       ]
     },
