@@ -32,7 +32,7 @@
     servant: number | null
   }
 
-  const formData: Master = reactive({
+  let formData: Master = reactive({
     id: null,
     name: null,
     password: null,
@@ -40,7 +40,7 @@
     servant: null,
   })
 
-  const oData: Master = reactive({
+  let oData: Master = reactive({
     id: null,
     name: null,
     password: null,
@@ -101,7 +101,6 @@
         Object.assign(oData, res.data)
         oData.servant = res.data.servants.length
         Object.assign(formData, oData)
-        console.log(oData)
       })
       .catch((err) => {
         localStorage.removeItem('token')
