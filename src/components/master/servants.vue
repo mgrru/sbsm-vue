@@ -1,37 +1,24 @@
 <template>
-  <!-- <el-table :data="table" height="600px" style="width: 100%" table-layout="auto" :show-header="false">
-    <el-table-column label="servant">
-      <template #default="scope">
-        <div style="display: flex; align-items: center; text-align: center;">
-          <el-card style="min-width: 200px">
-            <template #header>
-              <div class="card-header">
-                <span>{{ scope.row.name }}</span>
-              </div>
-            </template>
-<p class="text item">星级: {{ scope.row.star }}星</p>
-<p class="text item">从者编号: {{ scope.row.id }}</p>
-</el-card>
-</div>
-</template>
-</el-table-column>
-</el-table> -->
-
-  <el-row :gutter="10">
-    <el-col :span="5" offset="3" v-for="(card, index) in table" :key="index">
-      <div style="display: flex; align-items: center; text-align: center;">
-        <el-card style="min-width: 200px" shadow="hover">
-          <template #header>
-            <div class="card-header">
-              <span>{{ card.name }}</span>
-            </div>
-          </template>
-          <p class="text item">星级: {{ card.star }}星</p>
-          <p class="text item">从者编号: {{ card.id }}</p>
-        </el-card>
-      </div>
-    </el-col>
-  </el-row>
+  <div class="div-main">
+    <el-scrollbar max-height="700px">
+      <el-row>
+        <el-col :span="6" v-for="(card, index) in table" :key="index">
+          <div style="display: flex; align-items: center; text-align: center;">
+            <el-card style="min-width: 200px" shadow="hover">
+              <template #header>
+                <div class="card-header">
+                  <span>{{ card.name }}</span>
+                </div>
+              </template>
+              <p class="text item">星级: {{ card.star }}星</p>
+              <p class="text item">从者编号: {{ card.id }}</p>
+              <p class="text item">个体编号: {{ card.sid }}</p>
+            </el-card>
+          </div>
+        </el-col>
+      </el-row>
+    </el-scrollbar>
+  </div>
 
 </template>
 
@@ -81,9 +68,26 @@
 </script>
 
 <style scoped>
-  .el-row {
-    max-inline-size: 1200px;
+  .div-main {
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .el-row {
+    margin-bottom: 20px;
+  }
+
+  .el-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .el-col {
+    border-radius: 4px;
+  }
+
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
   }
 </style>
