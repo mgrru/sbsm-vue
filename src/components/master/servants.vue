@@ -1,5 +1,5 @@
 <template>
-  <div class="div-main">
+  <div class="div-main" v-show="haveData">
     <el-scrollbar max-height="700px">
       <el-row>
         <el-col :span="6" v-for="(card, index) in table" :key="index">
@@ -19,13 +19,13 @@
       </el-row>
     </el-scrollbar>
   </div>
-
+  <el-empty description="没有从者" v-show="!haveData" />
 </template>
 
 <script setup lang="ts">
   import router from '@/router'
   import axios from 'axios'
-  import { onMounted, reactive } from 'vue'
+  import { onMounted, reactive, ref } from 'vue'
 
   interface servant {
     id: number
@@ -33,6 +33,7 @@
     sid: number
     name: string
   }
+  let haveData = ref(false)
 
   let table: servant[] = reactive([])
 
@@ -53,6 +54,11 @@
         res.data.forEach((e: servant) => {
           table.push(e)
         })
+        if (table.length != 0) {
+          haveData.value = true
+        } else {
+          haveData.value = false
+        }
       })
       .catch((err) => {
         localStorage.removeItem('token')
