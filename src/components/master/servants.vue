@@ -1,6 +1,6 @@
 <template>
   <div class="div-main" v-show="haveData">
-    <el-scrollbar max-height="700px">
+    <el-scrollbar max-height="600px">
       <el-row>
         <el-col :span="6" v-for="(card, index) in table" :key="index">
           <div style="display: flex; align-items: center; text-align: center;">

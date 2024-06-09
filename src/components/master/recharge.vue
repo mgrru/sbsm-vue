@@ -30,7 +30,7 @@
       </el-radio-group>
     </div>
     <el-divider border-style="dashed" />
-    <el-button type="primary" @click="submit()">充值</el-button>
+    <el-button type="primary" @click="submit()">购买</el-button>
   </div>
 </template>
 

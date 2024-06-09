@@ -43,12 +43,12 @@
       </el-icon>
       注册
     </el-menu-item>
-    <el-menu-item index="3" route="/recharge" v-show="isLogin">
+    <!-- <el-menu-item index="3" route="/recharge" v-show="isLogin">
       <el-icon>
         <CreditCard />
       </el-icon>
       购买圣晶石
-    </el-menu-item>
+    </el-menu-item> -->
     <el-menu-item index="4" route="/about">
       <el-icon>
         <Promotion />
