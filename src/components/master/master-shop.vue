@@ -1,6 +1,6 @@
 <template>
-  <el-form label-position="top" label-width="auto" style="max-width: 300px">
-    <el-button type="primary" @click="submit1()">
+  <el-form label-position="top" label-width="120px" style="max-width: 150px">
+    <el-button class="el-button1 el-button" type="primary" @click="submit1()">
       <el-icon>
         <img style="width: 15px" src="/GameIconsDoubleRingedOrb.svg" alt="灵基变还" />
       </el-icon>
@@ -17,9 +17,6 @@
 
 <script setup lang="ts">
   import router from '@/router'
-  import { ref } from 'vue'
-
-  let rmb = ref(0)
 
   const submit1 = () => {
     router.push('/master/sell')
@@ -32,8 +29,17 @@
 
 <style scoped>
   .el-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .el-button {
+    width: 120px;
+    margin-top: 10px;
+    margin-left: 12px;
   }
 </style>

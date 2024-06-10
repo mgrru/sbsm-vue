@@ -1,10 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
-import LogView from '@/components/log/log.vue'
-import AddView from '@/components/user/add.vue'
-import SelectView from '@/components/user/select.vue'
-import UpdateView from '@/components/user/update.vue'
 import LoginView from '@/components/master/login.vue'
 import HelloView from '@/components/master/hello.vue'
 import Recharge from '@/components/master/master-recharge.vue'
@@ -13,6 +9,7 @@ import MasterProfile from '@/components/master/master-profile.vue'
 import Servants from '@/components/master/master-servants.vue'
 import Shop from '@/components/master/master-shop.vue'
 import ServantSell from '@/components/master/servant-sell.vue'
+import ServantSummoning from '@/components/master/servant-summoning.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -64,6 +61,10 @@ const router = createRouter({
           path: '/master/recharge',
           component: Recharge
         },
+        {
+          path: '/master/summoning',
+          component: ServantSummoning
+        },
       ]
     },
     {
@@ -80,38 +81,6 @@ const router = createRouter({
         }
       ]
     },
-    {
-      path: '/log',
-      component: HomeView,
-      children: [
-        {
-          path: '/log/select',
-          name: 'log',
-          component: LogView
-        }
-      ]
-    },
-    {
-      path: '/user',
-      name: 'user',
-      component: HomeView,
-      children: [
-        {
-          path: '/user/add',
-          component: AddView
-        },
-        {
-          path: '/user/update/:id/:name',
-          name: 'update',
-          component: UpdateView,
-          props: true
-        },
-        {
-          path: '/user/select',
-          component: SelectView
-        }
-      ]
-    }
   ]
 })
 
